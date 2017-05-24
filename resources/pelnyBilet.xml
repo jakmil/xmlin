@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bilet>
+  <klient>
+    <adres>
+      <wojewodztwo>Mazowieckie</wojewodztwo>
+      <miasto>Warszawa</miasto>
+      <kodPocztowy>00-001</kodPocztowy>
+      <ulica>Marszałkowska</ulica>
+      <numer>1</numer>
+      <numer2>m. 1</numer2>
+    </adres>
+    <imie>Jan</imie>
+    <nazwisko>Kowalski</nazwisko>
+    <id>007</id>
+    <hash>10923910283</hash>
+    <telefon>500-187-200</telefon>
+  </klient>
+  <zakup>
+    <id>2017-01-15-1231</id>
+    <kanal>kasa</kanal>
+    <platnosc>gotowka</platnosc>
+    <adres>
+      <wojewodztwo>Mazowieckie</wojewodztwo>
+      <miasto>Warszawa</miasto>
+      <kodPocztowy>00-000</kodPocztowy>
+      <ulica>Aleja Jana Pawła II</ulica>
+      <numer>4</numer>
+    </adres>
+  </zakup>
+  <trasa>
+    <start>
+      <nazwa>Warszawa Centralna</nazwa>
+      <adres>
+        <wojewodztwo>Mazowieckie</wojewodztwo>
+        <miasto>Warszawa</miasto>
+        <kodPocztowy>00-004</kodPocztowy>
+        <ulica>Aleje Jerozolimskie</ulica>
+        <numer>67</numer>
+      </adres>
+    </start>
+    <koniec>
+      <nazwa>Lublin Główny</nazwa>
+      <adres>
+        <wojewodztwo>Lubelskie</wojewodztwo>
+        <miasto>Lublin</miasto>
+        <kodPocztowy>13-999</kodPocztowy>
+        <ulica>Dworcowa</ulica>
+        <numer>1</numer>
+      </adres>
+    </koniec>
+    <posrednie>
+      <nazwa>Puławy</nazwa>
+      <adres>
+        <wojewodztwo>Lubelskie</wojewodztwo>
+        <miasto>Puławy</miasto>
+        <kodPocztowy>13-567</kodPocztowy>
+        <ulica>Główna</ulica>
+        <numer>1</numer>
+      </adres>
+    </posrednie>
+    <numerPociagu>123456</numerPociagu>
+  </trasa>
+  <miejsce>
+    <numer>56</numer>
+    <polozenie>okno</polozenie>
+    <typ>siedzace</typ>
+    <klasa>kl.1</klasa>
+    <numerWagonu>7</numerWagonu>
+  </miejsce>
+  <ulga>37% Dzieci/Młodzież</ulga>
+  <faktura>
+    <nazwa>Kowalski sp. Z o.o.</nazwa>
+    <NIP>123-123-00-00</NIP>
+    <adres>
+      <wojewodztwo>Mazowieckie</wojewodztwo>
+      <miasto>Warszawa</miasto>
+      <kodPocztowy>00-123</kodPocztowy>
+      <ulica>Emilii Plater</ulica>
+      <numer>45</numer>
+      <numer2>m. 45</numer2>
+    </adres>
+  </faktura>
+  <data>2017-12-13</data>
+  <dataZakonczenia>2012-12-14</dataZakonczenia>
+  <godzina>12:00:00</godzina>
+</bilet>

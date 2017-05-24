@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bilet>
+  <trasa>
+    <start>
+      <nazwa>Warszawa Centralna</nazwa>
+    </start>
+    <koniec>
+      <nazwa>Lublin</nazwa>
+    </koniec>
+    <numerPociagu>1234567</numerPociagu>
+  </trasa>
+  <data>2017-01-01</data>
+</bilet>

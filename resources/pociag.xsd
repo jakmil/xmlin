@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="test">
+    <xs:import schemaLocation="bilet.xsd"/>
+    <xs:element name="pociag">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="numerPociagu" type="xs:token"/>
+                <xs:element name="odcinek" type="xs:complexType" minOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="odcinekKey">
+            <xs:selector xpath="pociag/odcinek"/>
+            <xs:field xpath="nazwa"/>
+        </xs:key>
+    </xs:element>
+
+    <xs:complexType name="odcinek">
+        <xs:sequence>
+            <xs:element name="nazwa" type="xs:string"/>
+            <xs:element name="miejsce" type="xs:complexType" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="miejsce">
+        <xs:sequence>
+            <xs:element name="numer" type="xs:string" maxOccurs="1"/>
+            <xs:element name="zajete" type="xs:boolean" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

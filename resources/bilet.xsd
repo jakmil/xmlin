@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"	targetNamespace="test">
+	<xs:include schemaLocation="numer.xsd"/>
+
+
+
+	<xs:element name="bilet" type="Bilet"/>
+
+
+
+	<xs:complexType name="Bilet">
+		<xs:sequence>
+			<xs:element name="klient" type="Klient" minOccurs="0"/>
+			<xs:element name="zakup" type="Zakup" minOccurs="0"/>
+			<xs:element name="trasa" type="Trasa"/>
+			<xs:element name="miejsce" type="Miejsce" minOccurs="0"/>
+			<xs:element name="ulga" type="Ulga" minOccurs="0"/>
+			<xs:element name="faktura" type="Faktura" minOccurs="0"/>
+			<xs:element name="data" type="xs:date"/>
+			<xs:element name="dataZakonczenia" type="xs:date" minOccurs="0"/>
+			<xs:element name="godzina" type="xs:time" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Klient">
+		<xs:sequence>
+			<xs:element name="adres" type="Adres" minOccurs="0"/>
+			<xs:element name="imie" type="xs:string" maxOccurs="3"/>
+			<xs:element name="nazwisko" type="xs:string"/>
+			<xs:element name="id" type="xs:token" minOccurs="0"/>
+			<xs:element name="hash" type="xs:token" minOccurs="0"/>
+			<xs:element name="telefon" type="xs:token" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Adres">
+		<xs:sequence>
+			<xs:element name="wojewodztwo" type="xs:string"/>
+			<xs:element name="miasto" type="xs:string"/>
+			<xs:element name="kodPocztowy" type="KodPocztowy"/>
+			<xs:element name="ulica" type="xs:string"/>
+			<xs:element name="numer" type="xs:string"/>
+			<xs:element name="numer2" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:simpleType name="KodPocztowy">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{2}-\d{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="Zakup">
+		<xs:sequence>
+			<xs:element name="id" type="xs:token"/>
+			<xs:element name="kanal" type="xs:string"/>
+			<xs:element name="platnosc" type="Platnosc"/>
+			<xs:element name="adres" type="Adres" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="Platnosc">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gotowka"/>
+			<xs:enumeration value="karta"/>
+			<xs:enumeration value="przelew"/>
+			<xs:enumeration value="inne"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="Trasa">
+		<xs:sequence>
+			<xs:element name="start" type="Stacja"/>
+			<xs:element name="koniec" type="Stacja"/>
+			<xs:element name="posrednie" type="Stacja" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="numerPociagu" type="xs:token"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Stacja">
+		<xs:sequence>
+			<xs:element name="nazwa" type="xs:string"/>
+			<xs:element name="adres" type="Adres" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Miejsce">
+		<xs:sequence>
+			<xs:element name="numer" type="xs:token"/>
+			<xs:element name="polozenie" type="Polozenie"/>
+			<xs:element name="typ" type="Typ"/>
+			<xs:element name="klasa" type="Klasa"/>
+			<xs:element name="numerWagonu" type="xs:token"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="Polozenie">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="okno"/>
+			<xs:enumeration value="srodek"/>
+			<xs:enumeration value="korytaz"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="Typ">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="siedzace"/>
+			<xs:enumeration value="kuszetka"/>
+			<xs:enumeration value="sypialne"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="Klasa">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="kl.1"/>
+			<xs:enumeration value="kl.2"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="Ulga">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="37%	Rodzic/Małżonek rodzica posiadający Kartę Dużej Rodziny"/>
+			<xs:enumeration value="37%	Dzieci/Młodzież"/>
+			<xs:enumeration value="37%	Os. niezd. do sam. egzystencji"/>
+			<xs:enumeration value="37%	Weterani"/>
+			<xs:enumeration value="37%	Inwalidzi/kombatanci wojenni/wojsk. zaliczeni do II lub III gr."/>
+			<xs:enumeration value="37%	Weterani"/>
+			<xs:enumeration value="37%	Kombatanci II/III gr."/>
+			<xs:enumeration value="37%	Posiadacze Karty Polaka"/>
+			<xs:enumeration
+					value="37%	Rodzic/Małżonek rodzica posiadający Kartę Dużej Rodziny i oferta Duża Rodzina (30%)"/>
+			<xs:enumeration value="37%	Dzieci/Młodzież i oferta Duża Rodzina (30%)"/>
+			<xs:enumeration value="37%	Os. niezd. do sam. egzystencji i oferta Duża Rodzina (30%)"/>
+			<xs:enumeration value="37%	Weterani i oferta Duża Rodzina (30%)"/>
+			<xs:enumeration
+					value="37%	Inwalidzi/kombatanci wojenni/wojsk. zaliczeni do II lub III gr. i oferta Duża Rodzina (30%)"/>
+			<xs:enumeration value="37%	Weterani i oferta Duża Rodzina (30%)"/>
+			<xs:enumeration value="37%	Kombatanci II/III gr. i oferta Duża Rodzina (30%)"/>
+			<xs:enumeration value="37%	Posiadacze Karty Polaka i oferta Duża Rodzina (30%)"/>
+			<xs:enumeration value="50%	Umowa"/>
+			<xs:enumeration value="50%	Posiadacze KARTY SENIORA"/>
+			<xs:enumeration value="51%	Kombatanci/Kombatanci I/II/III gr."/>
+			<xs:enumeration value="51%	Kombatanci/Kombatanci II/III gr."/>
+			<xs:enumeration value="51%	Studenci i słuchacze koleg. do 26 lat oraz doktoranci do 35 lat"/>
+			<xs:enumeration
+					value="51%	Kombatanci/Kombatanci I/II/III gr. i oferta Duża Rodzina (30%)/51% Combatants/Combatants with 1st/2nd/3rd disability gro"/>
+			<xs:enumeration value="51%	Kombatanci/Kombatanci I/II/III gr. i oferta Duża Rodzina (30%)"/>
+			<xs:enumeration
+					value="51%	Studenci i słuchacze koleg. do 26 lat oraz doktoranci do 35 lat i oferta Duża Rodzina (30%)"/>
+			<xs:enumeration value="78%	Żołnierze odbywający niezawodową służbę wojskową"/>
+			<xs:enumeration value="78%	Dzieci/młodzież niepełnosprawna i ich opiekunowie"/>
+			<xs:enumeration
+					value="78%	Żołnierze odbywający niezawodową służbę wojskową i oferta Duża Rodzina (30%)"/>
+			<xs:enumeration
+					value="78%	Dzieci/młodzież niepełnosprawna i ich opiekunowie i oferta Duża Rodzina (30%)"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="Faktura">
+		<xs:sequence>
+			<xs:element name="nazwa" type="xs:string"/>
+			<xs:element name="NIP" type="Nip" minOccurs="0"/>
+			<xs:element name="adres" type="Adres"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="Nip">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{3}-\d{3}-\d{2}-\d{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

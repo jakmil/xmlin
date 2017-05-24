@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pociag>
+  <bilet>
+    <trasa>
+      <start>
+        <nazwa>Warszawa Centralna</nazwa>
+      </start>
+      <koniec>
+        <nazwa>Lublin</nazwa>
+      </koniec>
+      <numerPociagu>123456</numerPociagu>
+    </trasa>
+    <miejsce>
+      <numer>10</numer>
+      <polozenie>okno</polozenie>
+      <typ>siedzace</typ>
+      <klasa>kl.1</klasa>
+      <numerWagonu>3</numerWagonu>
+    </miejsce>
+    <data>2017-01-01</data>
+  </bilet>
+  <bilet>
+    <trasa>
+      <start>
+        <nazwa>Warszawa Centralna</nazwa>
+      </start>
+      <koniec>
+        <nazwa>Lublin</nazwa>
+      </koniec>
+      <numerPociagu>123456</numerPociagu>
+    </trasa>
+    <miejsce>
+      <numer>11</numer>
+      <polozenie>okno</polozenie>
+      <typ>siedzace</typ>
+      <klasa>kl.1</klasa>
+      <numerWagonu>3</numerWagonu>
+    </miejsce>
+    <data>2017-01-01</data>
+  </bilet>
+  <numerPociagu>123456</numerPociagu>
+</pociag>
