@@ -42,30 +42,19 @@ public class Main {
                         inputReader.readInput(urlb);
                         System.out.println(urla);
                         System.out.println(urlb);
-                        DomSimplePrinter simplePrinter = new DomSimplePrinter();
-
-
-
-                        //TODO
-                        simplePrinter.printDomTree(train);
-                        simplePrinter.printDomTree(tickets);
-                        //TODO
-
-
-
+                        setBlackFlag(false);
                         System.out.println("Files loaded");
                         break;
                     case "CONTROL":
-                        //TODO
                         TicketController controller = new TicketController();
                         String com = controller.controlTrain(train, tickets);
                         System.out.println(com);
                         if(com == "VALID"){
                             setBlackFlag(true);
+                            System.out.println("Use 'report' to get report");
                         }
                         break;
                     case "REPORT":
-                        //TODO
                         TicketReporter reporter = new TicketReporter();
                         if(blackFlag){
                             String report = reporter.makeReport(train, tickets);

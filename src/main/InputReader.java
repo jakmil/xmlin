@@ -37,17 +37,6 @@ public class InputReader {
         } catch (SAXException | IOException e1) {
             e1.printStackTrace();
         }
-
-        Node lawnMower = doc.getFirstChild();
-        NodeList nodeList = lawnMower.getChildNodes();
-
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            if (nodeList.item(i).getNodeType() == ELEMENT_NODE ) {
-                Node questionNode = nodeList.item(i);
-
-                System.out.println(questionNode.toString());
-            }
-        }
     return doc;
     }
 }
