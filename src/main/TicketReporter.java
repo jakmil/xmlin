@@ -37,9 +37,7 @@ public class TicketReporter {
             float countx = c * z;
             rev = rev + countx;
         }
-
-
-        raport = "" +rev;
+        raport = "Przychód z pociągu: " +rev +"\nIlość pasażerów :"+foo;
         return raport;
     }
 }

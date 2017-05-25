@@ -20,7 +20,7 @@ public class Main {
             br = new BufferedReader(new InputStreamReader(System.in));
             while (true) {
                 //br = new BufferedReader(new InputStreamReader(System.in));
-                System.out.print("Enter something : ");
+                System.out.print("Enter command: ");
                 String input = br.readLine();
                 input = input.toUpperCase();
                 switch (input) {
@@ -47,12 +47,16 @@ public class Main {
                         System.out.println("Files loaded");
                         break;
                     case "CONTROL":
-                        TicketController controller = new TicketController();
-                        String com = controller.controlTrain(train, tickets);
-                        System.out.println(com);
-                        if(com == "VALID"){
-                            setBlackFlag(true);
-                            System.out.println("Use 'report' to get report");
+                        if (train != null & tickets != null) {
+                            TicketController controller = new TicketController();
+                            String com = controller.controlTrain(train, tickets);
+                            System.out.println(com);
+                            if (com == "VALID") {
+                                setBlackFlag(true);
+                                System.out.println("Use 'report' to get report");
+                            }
+                        } else {
+                            System.out.println("No data, use 'input' to select data");
                         }
                         break;
                     case "REPORT":
@@ -61,7 +65,7 @@ public class Main {
                             String report = reporter.makeReport(train, tickets);
                             System.out.println(report);
                         } else {
-                            System.out.println("Input invalidated, use 'valid' to validate input");
+                            System.out.println("Input invalidated, use 'control' to validate input");
                         }
                         break;
                     default:
