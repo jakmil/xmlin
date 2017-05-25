@@ -2,6 +2,7 @@ package main;
 
 import org.w3c.dom.Node;
 
+import javax.xml.xpath.XPathExpressionException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -60,7 +61,7 @@ public class Main {
                             String report = reporter.makeReport(train, tickets);
                             System.out.println(report);
                         } else {
-                            System.out.println("Input invalid, use Valid to validate input");
+                            System.out.println("Input invalidated, use 'valid' to validate input");
                         }
                         break;
                     default:
@@ -73,6 +74,8 @@ public class Main {
             }
 
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (XPathExpressionException e) {
             e.printStackTrace();
         } finally {
             if (br != null) {

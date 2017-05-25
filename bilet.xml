@@ -16,6 +16,8 @@
       <odcinek>lodz-wroclaw</odcinek>
     </odcinki>
     <data>2017-01-01</data>
+    <cena>70</cena>
+    <wartoscZnizki>0.5</wartoscZnizki>
   </bilet>
   <bilet>
     <trasa>
@@ -32,6 +34,8 @@
       <odcinek>warszawa-lodz</odcinek>
     </odcinki>
     <data>2017-01-01</data>
+    <cena>70</cena>
+    <wartoscZnizki>0.5</wartoscZnizki>
   </bilet>
   <bilet>
     <trasa>
@@ -48,5 +52,7 @@
       <odcinek>lodz-wroclaw</odcinek>
     </odcinki>
     <data>2017-01-01</data>
+    <cena>70</cena>
+    <wartoscZnizki>0.5</wartoscZnizki>
   </bilet>
 </bilety>
