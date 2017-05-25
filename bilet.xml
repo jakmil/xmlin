@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bilety>
   <bilet>
-  <trasa>
-    <start>
-      <nazwa>Warszawa</nazwa>
-    </start>
-    <koniec>
-      <nazwa>Wroclaw</nazwa>
-    </koniec>
-    <numerPociagu>1234567</numerPociagu>
-  </trasa>
-  <miejsce>1</miejsce>
-  <odcinki>
-    <odcinek>warszawa-lodz</odcinek>
-    <odcinek>lodz-wroclaw</odcinek>
-  </odcinki>
-  <data>2017-01-01</data>
-  </bilet>
-  <bilet>
     <trasa>
       <start>
         <nazwa>Warszawa</nazwa>
@@ -60,7 +43,7 @@
       </koniec>
       <numerPociagu>1234567</numerPociagu>
     </trasa>
-    <miejsce>2</miejsce>
+    <miejsce>3</miejsce>
     <odcinki>
       <odcinek>lodz-wroclaw</odcinek>
     </odcinki>

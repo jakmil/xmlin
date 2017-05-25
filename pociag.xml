@@ -2,7 +2,7 @@
 <pociag>
   <numer>123456</numer>
   <odcinek>
-    <nazwa>Warszawa-Lodz</nazwa>
+    <nazwa>warszawa-lodz</nazwa>
     <miejsce>
       <numer>1</numer>
     </miejsce>
@@ -14,7 +14,7 @@
     </miejsce>
   </odcinek>
   <odcinek>
-    <nazwa>Lodz-Wroclaw</nazwa>
+    <nazwa>lodz-wroclaw</nazwa>
     <miejsce>
       <numer>1</numer>
     </miejsce>
