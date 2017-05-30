@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"	targetNamespace="test">
-	<xs:include schemaLocation="numer.xsd"/>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						targetNamespace="http://xml.mimuw.edu.pl/jm364533/bilet"
+						xmlns:num="http://xml.mimuw.edu.pl/jm364533/numer"
+						xmlns:tgt="http://xml.mimuw.edu.pl/jm364533/bilet">
+
+
+	<xs:import 	schemaLocation="numer.xsd"
+							namespace="http://xml.mimuw.edu.pl/jm364533/numer"/>
 
 
 
@@ -10,12 +16,12 @@
 
 	<xs:complexType name="Bilet">
 		<xs:sequence>
-			<xs:element name="klient" type="Klient" minOccurs="0"/>
-			<xs:element name="zakup" type="Zakup" minOccurs="0"/>
-			<xs:element name="trasa" type="Trasa"/>
+			<xs:element name="klient" type="tgt:Klient" minOccurs="0"/>
+			<xs:element name="zakup" type="tgt:Zakup" minOccurs="0"/>
+			<xs:element name="trasa" type="tgt:Trasa"/>
 			<xs:element name="miejsce" type="xs:string" minOccurs="0"/>
-			<xs:element name="ulga" type="Ulga" minOccurs="0"/>
-			<xs:element name="faktura" type="Faktura" minOccurs="0"/>
+			<xs:element name="ulga" type="tgt:Ulga" minOccurs="0"/>
+			<xs:element name="faktura" type="tgt:Faktura" minOccurs="0"/>
 			<xs:element name="data" type="xs:date"/>
 			<xs:element name="dataZakonczenia" type="xs:date" minOccurs="0"/>
 			<xs:element name="godzina" type="xs:time" minOccurs="0"/>
@@ -31,7 +37,7 @@
 
 	<xs:complexType name="Klient">
 		<xs:sequence>
-			<xs:element name="adres" type="Adres" minOccurs="0"/>
+			<xs:element name="adres" type="tgt:Adres" minOccurs="0"/>
 			<xs:element name="imie" type="xs:string" maxOccurs="3"/>
 			<xs:element name="nazwisko" type="xs:string"/>
 			<xs:element name="id" type="xs:token" minOccurs="0"/>
@@ -44,7 +50,7 @@
 		<xs:sequence>
 			<xs:element name="wojewodztwo" type="xs:string"/>
 			<xs:element name="miasto" type="xs:string"/>
-			<xs:element name="kodPocztowy" type="KodPocztowy"/>
+			<xs:element name="kodPocztowy" type="tgt:KodPocztowy"/>
 			<xs:element name="ulica" type="xs:string"/>
 			<xs:element name="numer" type="xs:string"/>
 			<xs:element name="numer2" type="xs:string" minOccurs="0"/>
@@ -62,8 +68,8 @@
 		<xs:sequence>
 			<xs:element name="id" type="xs:token"/>
 			<xs:element name="kanal" type="xs:string"/>
-			<xs:element name="platnosc" type="Platnosc"/>
-			<xs:element name="adres" type="Adres" minOccurs="0"/>
+			<xs:element name="platnosc" type="tgt:Platnosc"/>
+			<xs:element name="adres" type="tgt:Adres" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -78,17 +84,17 @@
 
 	<xs:complexType name="Trasa">
 		<xs:sequence>
-			<xs:element name="start" type="Stacja"/>
-			<xs:element name="koniec" type="Stacja"/>
-			<xs:element name="posrednie" type="Stacja" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="numerPociagu" type="xs:token"/>
+			<xs:element name="start" type="tgt:Stacja"/>
+			<xs:element name="koniec" type="tgt:Stacja"/>
+			<xs:element name="posrednie" type="tgt:Stacja" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="numerPociagu" type="num:NumerPociagu"/>
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="Stacja">
 		<xs:sequence>
 			<xs:element name="nazwa" type="xs:string"/>
-			<xs:element name="adres" type="Adres" minOccurs="0"/>
+			<xs:element name="adres" type="tgt:Adres" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -157,8 +163,8 @@
 	<xs:complexType name="Faktura">
 		<xs:sequence>
 			<xs:element name="nazwa" type="xs:string"/>
-			<xs:element name="NIP" type="Nip" minOccurs="0"/>
-			<xs:element name="adres" type="Adres"/>
+			<xs:element name="NIP" type="tgt:Nip" minOccurs="0"/>
+			<xs:element name="adres" type="tgt:Adres"/>
 		</xs:sequence>
 	</xs:complexType>
 

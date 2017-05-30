@@ -7,6 +7,7 @@ import javax.xml.xpath.*;
 /**
  * Created by Jakub on 22.05.2017.
  */
+
 public class TicketReporter {
 
     public TicketReporter() {
@@ -23,6 +24,7 @@ public class TicketReporter {
         String count = expr.evaluate(tickets, XPathConstants.STRING).toString();
         int foo = Integer.parseInt(count);
         float rev = 0;
+        int znz = 0;
         for (int i = 1; i < foo+1; i++){
             String cena = "/bilety/bilet[" + i + "]/cena";
             XPathExpression exprs = xpath.compile(cena);
@@ -36,8 +38,12 @@ public class TicketReporter {
             float c = Float.parseFloat(counts);
             float countx = c * z;
             rev = rev + countx;
+
+            if (z > 0 & z < 1){
+                znz ++;
+            }
         }
-        raport = "Przychód z pociągu: " +rev +"\nIlość pasażerów :"+foo;
+        raport = "Przychód z pociągu: " +rev +"\nIlość pasażerów :"+foo+"\nIlość biletów ze zniżką: "+znz;
         return raport;
     }
 }

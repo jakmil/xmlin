@@ -10,6 +10,42 @@
       </koniec>
       <numerPociagu>1234567</numerPociagu>
     </trasa>
+    <miejsce>10</miejsce>
+    <odcinki>
+      <odcinek>warszawa-lodz</odcinek>
+    </odcinki>
+    <data>2017-01-01</data>
+    <cena>70</cena>
+    <wartoscZnizki>0.5</wartoscZnizki>
+  </bilet>
+  <bilet>
+    <trasa>
+      <start>
+        <nazwa>Warszawa</nazwa>
+      </start>
+      <koniec>
+        <nazwa>Wroclaw</nazwa>
+      </koniec>
+      <numerPociagu>1234567</numerPociagu>
+    </trasa>
+    <miejsce>10</miejsce>
+    <odcinki>
+      <odcinek>lodz-wroclaw</odcinek>
+    </odcinki>
+    <data>2017-01-01</data>
+    <cena>70</cena>
+    <wartoscZnizki>0.5</wartoscZnizki>
+  </bilet>
+  <bilet>
+    <trasa>
+      <start>
+        <nazwa>Warszawa</nazwa>
+      </start>
+      <koniec>
+        <nazwa>Wroclaw</nazwa>
+      </koniec>
+      <numerPociagu>1234567</numerPociagu>
+    </trasa>
     <miejsce>1</miejsce>
     <odcinki>
       <odcinek>warszawa-lodz</odcinek>
@@ -53,6 +89,6 @@
     </odcinki>
     <data>2017-01-01</data>
     <cena>70</cena>
-    <wartoscZnizki>0.5</wartoscZnizki>
+    <wartoscZnizki>1</wartoscZnizki>
   </bilet>
 </bilety>

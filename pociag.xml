@@ -12,6 +12,9 @@
     <miejsce>
       <numer>3</numer>
     </miejsce>
+    <miejsce>
+      <numer>10</numer>
+    </miejsce>
   </odcinek>
   <odcinek>
     <nazwa>lodz-wroclaw</nazwa>
@@ -23,6 +26,9 @@
     </miejsce>
     <miejsce>
       <numer>3</numer>
+    </miejsce>
+    <miejsce>
+      <numer>10</numer>
     </miejsce>
   </odcinek>
 </pociag>
