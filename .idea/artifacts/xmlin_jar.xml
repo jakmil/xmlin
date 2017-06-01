@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="xmlin:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/xmlin_jar</output-path>
+    <root id="archive" name="xmlin.jar">
+      <element id="module-output" name="xmlin" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/guava/guava/18.0/guava-18.0.jar" path-in-jar="/" />
+      <element id="library" level="project" name="com.google.guava:guava:18.0" />
+    </root>
+  </artifact>
+</component>

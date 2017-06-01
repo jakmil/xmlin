@@ -1,0 +1,54 @@
+<schema attributeFormDefault="unqualified"
+        elementFormDefault="qualified"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xml.mimuw.edu.pl/jm364533/tgnamespc"
+        xmlns:tgtns="http://xml.mimuw.edu.pl/jm364533/tgnamespc"
+        xmlns:num="http://xml.mimuw.edu.pl/jm364533/numer"
+        >
+  <import schemaLocation="numer.xsd" namespace="http://xml.mimuw.edu.pl/jm364533/numer"/>
+  <element name="bilety">
+    <complexType>
+      <sequence>
+        <element name="bilet" type="tgtns:bilet" maxOccurs="unbounded" minOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <complexType name="start">
+    <sequence>
+      <element type="string" name="nazwa"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="koniec">
+    <sequence>
+      <element type="string" name="nazwa"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="trasa">
+    <sequence>
+      <element type="tgtns:start" name="start"/>
+      <element type="tgtns:koniec" name="koniec"/>
+      <element type="num:NumerPociagu" name="numerPociagu"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="odcinki">
+    <sequence>
+      <element type="string" name="odcinek" maxOccurs="unbounded" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="bilet">
+    <sequence>
+      <element type="tgtns:trasa" name="trasa"/>
+      <element type="int" name="miejsce"/>
+      <element type="tgtns:odcinki" name="odcinki"/>
+      <element type="date" name="data"/>
+      <element type="int" name="cena"/>
+      <element type="float" name="wartoscZnizki"/>
+    </sequence>
+  </complexType>
+
+</schema>

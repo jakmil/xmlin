@@ -1,9 +1,18 @@
-package main;
-
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import javax.xml.XMLConstants;
+import javax.xml.transform.Source;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import static org.w3c.dom.Node.ELEMENT_NODE;
 
@@ -18,7 +27,21 @@ public class TicketController {
         super();
     }
 
-    public String controlTrain(Node train, Node tickets) {
+    public String controlTrain(Node train, Node tickets) throws SAXException {
+
+        /*SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+        Source schemaFile = new StreamSource(new File("bilet.xsd"));
+        Schema schema = factory.newSchema(schemaFile);
+        Validator validator = schema.newValidator();
+
+        try {
+            validator.validate(new DOMSource(tickets));
+        } catch (SAXException e) {
+            return "INVALID - UNPARSED WITH SCHEMA";
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+
 
         ListMultimap<String, String> trainMap = ArrayListMultimap.create();
 

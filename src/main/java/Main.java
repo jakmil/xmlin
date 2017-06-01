@@ -1,7 +1,10 @@
-package main;
-
 import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
 
+import javax.print.DocFlavor;
+import javax.xml.XMLConstants;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
 import javax.xml.xpath.XPathExpressionException;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,6 +15,7 @@ public class Main {
     private static Node train;
     private static Node tickets;
     private static boolean blackFlag = false;
+    private static boolean kFlag = true;
     public static void main(String[] args) {
 
         BufferedReader br = null;
@@ -38,12 +42,19 @@ public class Main {
                         String urla = br.readLine();
                         System.out.print("Tickets path: ");
                         String urlb = br.readLine();
-                        setTrain(inputReader.readInput(urla));
-                        setTickets(inputReader.readInput(urlb));
-                        inputReader.readInput(urlb);
+
+                        Node a = inputReader.readInputTrain(urla);
+                        Node b = inputReader.readInputTicket(urlb);
+                        if(kFlag){
+                            setTrain(a);
+                            setTickets(b);
+                        } else {
+                            System.out.println("Files unloaded - INVALID WITH SCHEMA");
+                        }
                         System.out.println(urla);
                         System.out.println(urlb);
                         setBlackFlag(false);
+                        setkFlag(true);
                         System.out.println("Files loaded");
                         break;
                     case "CONTROL":
@@ -81,6 +92,10 @@ public class Main {
             e.printStackTrace();
         } catch (XPathExpressionException e) {
             e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             if (br != null) {
                 try {
@@ -115,4 +130,10 @@ public class Main {
     public static void setBlackFlag(boolean blackFlag) {
         Main.blackFlag = blackFlag;
     }
+
+    public static boolean iskFlag() {
+        return kFlag;
+    }
+
+    public static void setkFlag(boolean kFlag) {Main.kFlag = kFlag; }
 }
